@@ -1,0 +1,22 @@
+<!doctype html>
+{% load static %} 
+<html lang="en-US">
+  <head>
+    <script src="{% static 'app/shorten.js' %}"></script>
+    <meta charset="UTF-8" />
+    <title>Shorten a URL</title>
+  </head>
+  <body>
+    <p>Submit a long URL:</p>
+    <form id="shortener-form" method="post">
+        {% csrf_token %}  
+        <input type="url" id="long-url" placeholder="Long URL" required ><br><br>
+        <input id="custom-short-url" placeholder="Optional custom short url" style="width: 150px;" ><br><br>
+        <button type="submit">Shorten</button>
+    </form>
+    <div id="result">
+        <p>Your short URL:</p>
+        <a id="short-url-link" href="#" target="_blank"></a>
+    </div>
+  </body>
+</html>
