@@ -1,6 +1,3 @@
-from argparse import _MutuallyExclusiveGroup
-from datetime import datetime
-from random import randint
 from django.db import models
 import hashlib
 
